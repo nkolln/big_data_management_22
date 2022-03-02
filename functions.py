@@ -1,6 +1,8 @@
 from pandas import DataFrame
 from pyspark.mllib.stat import Statistics
 from pyspark.sql.functions import col, countDistinct
+import pyspark.sql.functions as pf
+from pyspark.ml.feature import StringIndexer
 
 
 class Stats:
@@ -16,3 +18,11 @@ class Stats:
         print(summary.mean())  # a dense vector containing the mean value for each column
         print(summary.variance())  # column-wise variance
         print(summary.numNonzeros())  # number 
+
+class Transform:
+    def categorical_conversion(data:DataFrame,col:str)->DataFrame:
+        data = data.sort(pf.asc(col))
+        #data.show()
+        indexer = StringIndexer(inputCol=col, outputCol="category"+str(col))
+        data = indexer.fit(data).transform(data)
+        return(data)
