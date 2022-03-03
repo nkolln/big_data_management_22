@@ -22,12 +22,12 @@ def preprocess_weather_test()->None:
 
     #converts data to pivot and aggregates. Need to do by type as showed many different weather systems
     pivot_df = df_processed.groupBy("categoryType","daily_timestamp","County").agg(pf.first(pf.col("categorySeverity")).alias("categorySeverity"), pf.avg(pf.col("Precipitation(in)")).alias("avgPrecipitation"))
-    pivot_df.show()
+    
     #Converts each different type to an appropiate in line column
     #pivot_df = pivot_df.groupBy("daily_timestamp").pivot("categoryType").agg(pf.first(pf.col("categoryType")).alias("categoryType"),pf.first(pf.col("categorySeverity")).alias("categorySeverity"),pf.avg(pf.col("avgPrecipitation")).alias("avgPrecipitation"))
     #pivot_df.show()
-    pivot_df = pivot_df.groupBy("daily_timestamp").pivot("County").agg(pf.first(pf.col("categoryType")).alias("categoryType"),pf.first(pf.col("categorySeverity")).alias("categorySeverity"),pf.avg(pf.col("avgPrecipitation")).alias("avgPrecipitation"))
-
+    pivot_df = pivot_df.groupBy("daily_timestamp").pivot("County").agg(pf.collect_list(pf.col("categoryType")).alias("categoryType"),pf.collect_list(pf.col("categorySeverity")).alias("categorySeverity"),pf.avg(pf.col("avgPrecipitation")).alias("avgPrecipitation"))
+    pivot_df.show()
 
     pivot_df.write.format("parquet").save("weather.parquet")
     #pivot_df.write.format("csv").mode("overwrite").save("Data1/")
