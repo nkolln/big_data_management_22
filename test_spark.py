@@ -29,7 +29,7 @@ def preprocess_weather_test()->None:
     pivot_df = pivot_df.groupBy("daily_timestamp").pivot("County").agg(pf.first(pf.col("categoryType")).alias("categoryType"),pf.first(pf.col("categorySeverity")).alias("categorySeverity"),pf.avg(pf.col("avgPrecipitation")).alias("avgPrecipitation"))
 
 
-    #pivot_df.write.save("weather.parquet")
-    pivot_df.write.format("csv").mode("overwrite").save("Data1/")
+    pivot_df.write.format("parquet").save("weather.parquet")
+    #pivot_df.write.format("csv").mode("overwrite").save("Data1/")
     #pivot_df.toPandas().to_csv('Data/weather.csv')
 preprocess_weather_test()
