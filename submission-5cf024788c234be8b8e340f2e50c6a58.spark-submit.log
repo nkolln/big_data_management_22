@@ -1,0 +1,267 @@
+Using properties file: null
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.2.0.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Parsed arguments:
+  master                  spark://spark-master.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7077
+  deployMode              null
+  executorMemory          300g
+  executorCores           null
+  totalExecutorCores      null
+  propertiesFile          null
+  driverMemory            30g
+  driverCores             null
+  driverExtraClassPath    null
+  driverExtraLibraryPath  null
+  driverExtraJavaOptions  null
+  supervise               false
+  queue                   null
+  numExecutors            null
+  files                   null
+  pyFiles                 null
+  archives                hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip
+  mainClass               null
+  primaryResource         hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/main.py
+  name                    main.py
+  childArgs               []
+  jars                    null
+  packages                null
+  packagesExclusions      null
+  repositories            null
+  verbose                 true
+
+Spark properties used, including those specified through
+ --conf and those from the properties file null:
+  (spark.blockManager.port,4041)
+  (spark.driver.memory,30g)
+  (spark.executor.memory,300g)
+  (spark.ui.port,4040)
+  (spark.driver.host,spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local)
+  (spark.hadoop.fs.defaultFS,hdfs://hdfs-namenode:8020)
+  (spark.driver.port,4042)
+
+    
+22/03/14 00:59:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Main class:
+org.apache.spark.deploy.PythonRunner
+Arguments:
+file:/tmp/spark-9457bf24-a2bf-4444-b3e7-40e4a827814f/main.py
+null
+--verbose
+Spark config:
+(spark.driver.host,spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local)
+(spark.archives,hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip)
+(spark.ui.port,4040)
+(spark.driver.port,4042)
+(spark.hadoop.fs.defaultFS,hdfs://hdfs-namenode:8020)
+(spark.app.name,main.py)
+(spark.driver.memory,30g)
+(spark.submit.pyFiles,)
+(spark.blockManager.port,4041)
+(spark.submit.deployMode,client)
+(spark.master,spark://spark-master.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7077)
+(spark.executor.memory,300g)
+Classpath elements:
+
+
+
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/14 00:59:49 INFO SparkContext: Running Spark version 3.2.0
+22/03/14 00:59:49 INFO ResourceUtils: ==============================================================
+22/03/14 00:59:49 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/03/14 00:59:49 INFO ResourceUtils: ==============================================================
+22/03/14 00:59:49 INFO SparkContext: Submitted application: main.py
+22/03/14 00:59:49 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 307200, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/03/14 00:59:49 INFO ResourceProfile: Limiting resource is cpu
+22/03/14 00:59:49 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/03/14 00:59:49 INFO SecurityManager: Changing view acls to: spark
+22/03/14 00:59:49 INFO SecurityManager: Changing modify acls to: spark
+22/03/14 00:59:49 INFO SecurityManager: Changing view acls groups to: 
+22/03/14 00:59:49 INFO SecurityManager: Changing modify acls groups to: 
+22/03/14 00:59:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+22/03/14 00:59:49 INFO Utils: Successfully started service 'sparkDriver' on port 4042.
+22/03/14 00:59:49 INFO SparkEnv: Registering MapOutputTracker
+22/03/14 00:59:49 INFO SparkEnv: Registering BlockManagerMaster
+22/03/14 00:59:49 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/03/14 00:59:49 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/03/14 00:59:49 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/03/14 00:59:49 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-3058ffdc-0bda-4ec0-9ad6-b55bbdc8698e
+22/03/14 00:59:49 INFO MemoryStore: MemoryStore started with capacity 17.8 GiB
+22/03/14 00:59:49 INFO SparkEnv: Registering OutputCommitCoordinator
+22/03/14 00:59:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/03/14 00:59:50 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4040
+22/03/14 00:59:50 INFO SparkContext: Added archive hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip at hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip with timestamp 1647219589026
+22/03/14 00:59:50 INFO Utils: Fetching hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip to /tmp/spark-05d24a1f-bd31-48d7-aed1-6bf8b56cdb46/fetchFileTemp5906914099424578603.tmp
+22/03/14 00:59:50 INFO SparkContext: Unpacking an archive hdfs://hdfs-namenode.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/app.zip from /tmp/spark-05d24a1f-bd31-48d7-aed1-6bf8b56cdb46/app.zip to /tmp/spark-3dc60976-f851-4e38-865b-484116829309/userFiles-de9613d8-9858-4b37-91fe-a8c7c470a9f0/app.zip
+22/03/14 00:59:50 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7077...
+22/03/14 00:59:50 INFO TransportClientFactory: Successfully created connection to spark-master.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local/192.168.139.197:7077 after 40 ms (0 ms spent in bootstraps)
+22/03/14 00:59:50 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20220314005950-0000
+22/03/14 00:59:50 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 4041.
+22/03/14 00:59:50 INFO NettyBlockTransferService: Server created on spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041
+22/03/14 00:59:50 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/03/14 00:59:50 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:50 INFO BlockManagerMasterEndpoint: Registering block manager spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 with 17.8 GiB RAM, BlockManagerId(driver, spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:50 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:50 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:50 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20220314005950-0000/0 on worker-20220314005557-worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local-7078 (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7078) with 40 core(s)
+22/03/14 00:59:50 INFO StandaloneSchedulerBackend: Granted executor ID app-20220314005950-0000/0 on hostPort worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7078 with 40 core(s), 300.0 GiB RAM
+22/03/14 00:59:50 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20220314005950-0000/1 on worker-20220314005553-worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local-7078 (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7078) with 40 core(s)
+22/03/14 00:59:50 INFO StandaloneSchedulerBackend: Granted executor ID app-20220314005950-0000/1 on hostPort worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:7078 with 40 core(s), 300.0 GiB RAM
+22/03/14 00:59:51 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20220314005950-0000/0 is now RUNNING
+22/03/14 00:59:51 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20220314005950-0000/1 is now RUNNING
+22/03/14 00:59:51 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+22/03/14 00:59:51 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/03/14 00:59:51 INFO SharedState: Warehouse path is 'file:/var/local/spark/spark-warehouse'.
+22/03/14 00:59:52 INFO InMemoryFileIndex: It took 61 ms to list leaf files for 1 paths.
+22/03/14 00:59:53 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.76.45:60508) with ID 0,  ResourceProfileId 0
+22/03/14 00:59:53 INFO BlockManagerMasterEndpoint: Registering block manager worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 with 179.8 GiB RAM, BlockManagerId(0, worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:54 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.135.8:33650) with ID 1,  ResourceProfileId 0
+22/03/14 00:59:54 INFO BlockManagerMasterEndpoint: Registering block manager worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 with 179.8 GiB RAM, BlockManagerId(1, worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, 4041, None)
+22/03/14 00:59:55 INFO FileSourceStrategy: Pushed Filters: IsNotNull(value)
+22/03/14 00:59:55 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(value#0),Contains(split(value#0, ,, -1)[0], USA),(((Contains(split(value#0, ,, -1)[1], /2016) OR Contains(split(value#0, ,, -1)[1], /2017)) OR Contains(split(value#0, ,, -1)[1], /2018)) OR Contains(split(value#0, ,, -1)[1], /2019))
+22/03/14 00:59:55 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+22/03/14 00:59:56 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+22/03/14 00:59:56 INFO CodeGenerator: Code generated in 306.38706 ms
+22/03/14 00:59:56 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 191.6 KiB, free 17.8 GiB)
+22/03/14 00:59:56 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 33.1 KiB, free 17.8 GiB)
+22/03/14 00:59:56 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 33.1 KiB, free: 17.8 GiB)
+22/03/14 00:59:56 INFO SparkContext: Created broadcast 0 from pivot at NativeMethodAccessorImpl.java:0
+22/03/14 00:59:56 INFO FileSourceScanExec: Planning scan with bin packing, max size: 41247474 bytes, open cost is considered as scanning 4194304 bytes.
+22/03/14 00:59:57 INFO DAGScheduler: Registering RDD 3 (pivot at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+22/03/14 00:59:57 INFO DAGScheduler: Got map stage job 0 (pivot at NativeMethodAccessorImpl.java:0) with 80 output partitions
+22/03/14 00:59:57 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (pivot at NativeMethodAccessorImpl.java:0)
+22/03/14 00:59:57 INFO DAGScheduler: Parents of final stage: List()
+22/03/14 00:59:57 INFO DAGScheduler: Missing parents: List()
+22/03/14 00:59:57 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at pivot at NativeMethodAccessorImpl.java:0), which has no missing parents
+22/03/14 00:59:57 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 36.2 KiB, free 17.8 GiB)
+22/03/14 00:59:57 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 15.9 KiB, free 17.8 GiB)
+22/03/14 00:59:57 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on spark-submit.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 15.9 KiB, free: 17.8 GiB)
+22/03/14 00:59:57 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1427
+22/03/14 00:59:57 INFO DAGScheduler: Submitting 80 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at pivot at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+22/03/14 00:59:57 INFO TaskSchedulerImpl: Adding task set 0.0 with 80 tasks resource profile 0
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 0, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 1, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 2, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 3, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 4, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 5, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 6, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 7, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 8, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 9, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 10, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 11, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 12, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 13, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 14, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 15, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 16, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 17, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 18, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 19, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 20, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 21, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 22, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 23, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 24, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 25.0 in stage 0.0 (TID 25) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 25, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 26.0 in stage 0.0 (TID 26) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 26, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 27.0 in stage 0.0 (TID 27) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 27, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 28.0 in stage 0.0 (TID 28) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 28, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 29.0 in stage 0.0 (TID 29) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 29, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 30.0 in stage 0.0 (TID 30) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 30, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 31.0 in stage 0.0 (TID 31) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 31, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 32.0 in stage 0.0 (TID 32) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 32, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 33.0 in stage 0.0 (TID 33) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 33, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 34.0 in stage 0.0 (TID 34) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 34, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 35.0 in stage 0.0 (TID 35) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 35, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 36.0 in stage 0.0 (TID 36) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 36, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 37.0 in stage 0.0 (TID 37) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 37, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 38.0 in stage 0.0 (TID 38) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 38, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 39.0 in stage 0.0 (TID 39) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 39, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 40.0 in stage 0.0 (TID 40) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 40, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 41.0 in stage 0.0 (TID 41) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 41, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 42.0 in stage 0.0 (TID 42) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 42, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 43.0 in stage 0.0 (TID 43) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 43, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 44.0 in stage 0.0 (TID 44) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 44, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 45.0 in stage 0.0 (TID 45) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 45, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 46.0 in stage 0.0 (TID 46) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 46, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 47.0 in stage 0.0 (TID 47) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 47, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 48.0 in stage 0.0 (TID 48) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 48, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 49.0 in stage 0.0 (TID 49) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 49, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 50.0 in stage 0.0 (TID 50) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 50, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 51.0 in stage 0.0 (TID 51) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 51, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 52.0 in stage 0.0 (TID 52) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 52, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 53.0 in stage 0.0 (TID 53) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 53, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 54.0 in stage 0.0 (TID 54) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 54, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 55.0 in stage 0.0 (TID 55) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 55, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 56.0 in stage 0.0 (TID 56) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 56, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 57.0 in stage 0.0 (TID 57) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 57, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 58.0 in stage 0.0 (TID 58) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 58, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 59.0 in stage 0.0 (TID 59) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 59, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 60.0 in stage 0.0 (TID 60) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 60, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 61.0 in stage 0.0 (TID 61) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 61, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 62.0 in stage 0.0 (TID 62) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 62, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 63.0 in stage 0.0 (TID 63) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 63, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 64.0 in stage 0.0 (TID 64) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 64, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 65.0 in stage 0.0 (TID 65) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 65, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 66.0 in stage 0.0 (TID 66) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 66, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 67.0 in stage 0.0 (TID 67) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 67, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 68.0 in stage 0.0 (TID 68) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 68, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 69.0 in stage 0.0 (TID 69) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 69, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 70.0 in stage 0.0 (TID 70) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 70, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 71.0 in stage 0.0 (TID 71) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 71, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 72.0 in stage 0.0 (TID 72) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 72, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 73.0 in stage 0.0 (TID 73) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 73, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 74.0 in stage 0.0 (TID 74) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 74, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 75.0 in stage 0.0 (TID 75) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 75, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 76.0 in stage 0.0 (TID 76) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 76, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 77.0 in stage 0.0 (TID 77) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 77, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 78.0 in stage 0.0 (TID 78) (worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 0, partition 78, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO TaskSetManager: Starting task 79.0 in stage 0.0 (TID 79) (worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local, executor 1, partition 79, PROCESS_LOCAL, 4842 bytes) taskResourceAssignments Map()
+22/03/14 00:59:57 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 15.9 KiB, free: 179.8 GiB)
+22/03/14 00:59:57 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 15.9 KiB, free: 179.8 GiB)
+22/03/14 00:59:59 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 33.1 KiB, free: 179.8 GiB)
+22/03/14 01:00:00 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on worker-0.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local:4041 (size: 33.1 KiB, free: 179.8 GiB)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 30.0 in stage 0.0 (TID 30) in 7520 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (1/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 38.0 in stage 0.0 (TID 38) in 7519 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (2/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 48.0 in stage 0.0 (TID 48) in 7515 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (3/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 46.0 in stage 0.0 (TID 46) in 7517 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (4/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 40.0 in stage 0.0 (TID 40) in 7520 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (5/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 34.0 in stage 0.0 (TID 34) in 7523 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (6/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 60.0 in stage 0.0 (TID 60) in 7511 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (7/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 7533 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (8/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 62.0 in stage 0.0 (TID 62) in 7511 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (9/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 76.0 in stage 0.0 (TID 76) in 7507 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (10/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 42.0 in stage 0.0 (TID 42) in 7522 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (11/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 44.0 in stage 0.0 (TID 44) in 7521 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (12/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 70.0 in stage 0.0 (TID 70) in 7509 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (13/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 66.0 in stage 0.0 (TID 66) in 7511 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (14/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 72.0 in stage 0.0 (TID 72) in 7510 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (15/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 58.0 in stage 0.0 (TID 58) in 7516 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (16/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 50.0 in stage 0.0 (TID 50) in 7520 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (17/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 7542 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (18/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 7534 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (19/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7559 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (20/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 7544 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (21/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 7544 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (22/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 32.0 in stage 0.0 (TID 32) in 7530 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (23/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 7541 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (24/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 28.0 in stage 0.0 (TID 28) in 7533 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (25/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 78.0 in stage 0.0 (TID 78) in 7511 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (26/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 7542 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (27/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 36.0 in stage 0.0 (TID 36) in 7530 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (28/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 68.0 in stage 0.0 (TID 68) in 7516 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (29/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 54.0 in stage 0.0 (TID 54) in 7522 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (30/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 7540 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (31/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 56.0 in stage 0.0 (TID 56) in 7522 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (32/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 26.0 in stage 0.0 (TID 26) in 7537 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (33/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 74.0 in stage 0.0 (TID 74) in 7515 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (34/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 7544 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (35/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 7539 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (36/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 24.0 in stage 0.0 (TID 24) in 7538 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (37/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 7542 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (38/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 52.0 in stage 0.0 (TID 52) in 7527 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (39/80)
+22/03/14 01:00:04 INFO TaskSetManager: Finished task 64.0 in stage 0.0 (TID 64) in 7521 ms on worker-1.worker.submission-5cf024788c234be8b8e340f2e50c6a58.svc.cluster.local (executor 0) (40/80)

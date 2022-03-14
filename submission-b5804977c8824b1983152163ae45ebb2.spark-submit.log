@@ -1,0 +1,76 @@
+Using properties file: null
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.2.0.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Parsed arguments:
+  master                  spark://spark-master.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local:7077
+  deployMode              null
+  executorMemory          300g
+  executorCores           null
+  totalExecutorCores      null
+  propertiesFile          null
+  driverMemory            30g
+  driverCores             null
+  driverExtraClassPath    null
+  driverExtraLibraryPath  null
+  driverExtraJavaOptions  null
+  supervise               false
+  queue                   null
+  numExecutors            null
+  files                   null
+  pyFiles                 null
+  archives                hdfs://hdfs-namenode.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local/app.zip
+  mainClass               null
+  primaryResource         hdfs://hdfs-namenode.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local/main.py
+  name                    main.py
+  childArgs               []
+  jars                    null
+  packages                null
+  packagesExclusions      null
+  repositories            null
+  verbose                 true
+
+Spark properties used, including those specified through
+ --conf and those from the properties file null:
+  (spark.blockManager.port,4041)
+  (spark.driver.memory,30g)
+  (spark.executor.memory,300g)
+  (spark.ui.port,4040)
+  (spark.driver.host,spark-submit.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local)
+  (spark.hadoop.fs.defaultFS,hdfs://hdfs-namenode:8020)
+  (spark.driver.port,4042)
+
+    
+22/03/14 01:11:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Main class:
+org.apache.spark.deploy.PythonRunner
+Arguments:
+file:/tmp/spark-c3835eb3-f5d2-4a9a-80b0-f5c930a69b9c/main.py
+null
+--verbose
+Spark config:
+(spark.driver.host,spark-submit.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local)
+(spark.archives,hdfs://hdfs-namenode.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local/app.zip)
+(spark.ui.port,4040)
+(spark.driver.port,4042)
+(spark.hadoop.fs.defaultFS,hdfs://hdfs-namenode:8020)
+(spark.app.name,main.py)
+(spark.driver.memory,30g)
+(spark.submit.pyFiles,)
+(spark.blockManager.port,4041)
+(spark.submit.deployMode,client)
+(spark.master,spark://spark-master.submission-b5804977c8824b1983152163ae45ebb2.svc.cluster.local:7077)
+(spark.executor.memory,300g)
+Classpath elements:
+
+
+
+Traceback (most recent call last):
+  File "/tmp/spark-c3835eb3-f5d2-4a9a-80b0-f5c930a69b9c/main.py", line 6, in <module>
+    import functions as f
+ModuleNotFoundError: No module named 'functions'
+log4j:WARN No appenders could be found for logger (org.apache.spark.util.ShutdownHookManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
