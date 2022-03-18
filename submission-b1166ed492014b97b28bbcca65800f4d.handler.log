@@ -1,0 +1,23 @@
+2022-03-15T18:44:11: Processing submission submission-b1166ed492014b97b28bbcca65800f4d for group-72 ({'app': '6ef1e9a141a5e0ea1c880625a2eaa97e61713afec7ac8faa1cfea3461eab1b73', 'data': '3a701dbccc60d18390cbf6a9543a533587177b08278a6e8dc344f6878c4e5e1d'}) (2AMD15)
+2022-03-15T18:44:11: Creating submission environment ...
+2022-03-15T18:44:12: Waiting for submission environment ...
+2022-03-15T18:46:53: Begin uploading files
+2022-03-15T18:46:56: Could not find META-INF/MANIFEST.MF in app archive
+2022-03-15T18:46:56: Could not find Main.class in app archive
+2022-03-15T18:46:57: Extracting and uploading main.py ...
+2022-03-15T18:46:58: main.py status: {'accessTime': 1647370017609, 'blockSize': 134217728, 'childrenNum': 0, 'fileId': 16386, 'group': 'supergroup', 'length': 7813, 'modificationTime': 1647370018406, 'owner': 'www-data', 'pathSuffix': '', 'permission': '755', 'replication': 3, 'storagePolicy': 0, 'type': 'FILE'}
+2022-03-15T18:46:58: Uploading app app.zip ...
+2022-03-15T18:46:58: App status: {'accessTime': 1647370018846, 'blockSize': 134217728, 'childrenNum': 0, 'fileId': 16387, 'group': 'supergroup', 'length': 2377, 'modificationTime': 1647370018928, 'owner': 'www-data', 'pathSuffix': '', 'permission': '755', 'replication': 3, 'storagePolicy': 0, 'type': 'FILE'}
+2022-03-15T18:46:58: Uploading data ...
+2022-03-15T18:46:58: Uploading daata file WeatherEvents.csv ...
+2022-03-15T18:47:13: Uploading /MS1.txt
+2022-03-15T18:47:45: Done uploading /MS1.txt
+2022-03-15T18:47:45: Submitting work ...
+2022-03-15T18:47:51: Status: Pending
+2022-03-15T18:47:57: Status: Pending
+2022-03-15T18:48:02: Status: Pending
+2022-03-15T18:48:07: Attaching logs
+2022-03-15T18:49:34: Status: Failed
+2022-03-15T18:49:34: Performing cleanup
+2022-03-15T18:49:34: Awaiting attached log termination
+2022-03-15T18:49:34: Bye

@@ -47,7 +47,7 @@ def preprocess_weather()->None:
     spark = SparkSession.builder.getOrCreate()
     df_raw = spark.read.option("header",True).csv("Data/WeatherEvents.csv")
     #df_raw = df_raw.sample(fraction=0.001,seed=3)
-    df_raw = df_raw.limit(10000) 
+    df_raw = df_raw.limit(10000)
     
     #reset dates to be days instead of exact measurements
     df_processed = df_raw.withColumn("daily_timestamps", pf.date_trunc("day", df_raw['StartTime(UTC)']))
