@@ -2,8 +2,8 @@ import time
 
 from pyspark.sql import SparkSession, functions
 import random
-import pandas
 import re
+
 spark = SparkSession.builder.getOrCreate()
 textFile = spark.read.text("Data/MS1.txt")
 # print(textFile.filter(textFile.value.contains("USA")).filter(textFile.value.contains("2016")).count())
@@ -22,7 +22,7 @@ id_list = ids_unique.collect()
 
 final_filter = year_filter
 for i in range(8907):
-    print("i: ",i)
+    print("i: ", i)
     random_index = random.choice(range(len(id_list)))
     # removed = id_list[random_index]['value']
     id_list.remove(id_list[random_index])
