@@ -53,6 +53,8 @@ spark.conf.set(
 df = spark.read.schema(table_schema).option("header", False).csv("Data/MS2Test.txt")
 
 start = time.time()
+
+
 # df = df.withColumn("ip", pf.abs(((pf.lit(-4387413) * df["ip"]) + pf.lit(442551)) % pf.lit(432426133)) % pf.lit(120011))
 # convert data to pandas dataframe
 df = pandas.DataFrame(df.toPandas())
