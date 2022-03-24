@@ -1,0 +1,15 @@
+2022-03-12T17:13:57: Processing submission submission-82df5c6a6d8b40bb819d066a523649a2 for group-72 ({'data': 'a028f345294343fde0d5a77623cd65ab2632aa2b5595f27aa83a1f041af07c68'}) (2AMD15)
+2022-03-12T17:13:58: Creating submission environment ...
+2022-03-12T17:13:59: Waiting for submission environment ...
+2022-03-12T17:16:39: Begin uploading files
+2022-03-12T17:16:42: Failed to submit: Traceback (most recent call last):
+  File "/opt/submissiond/handle-spark-submission.py", line 1169, in <module>
+    _info = upload_files_to_hdfs()
+  File "/opt/submissiond/handle-spark-submission.py", line 1056, in upload_files_to_hdfs
+    app_path = os.path.join(archive_dir, bound_files["app"])
+KeyError: 'app'
+
+2022-03-12T17:16:42: Attaching logs
+2022-03-12T17:16:42: Performing cleanup
+2022-03-12T17:16:42: Awaiting attached log termination
+2022-03-12T17:16:42: Bye
