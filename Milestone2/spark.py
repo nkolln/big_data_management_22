@@ -5,6 +5,8 @@ from pyspark.sql.types import *
 from pyspark.sql import Window
 from pyspark.rdd import reduce
 import time as t
+from pyspark.sql.functions import udf, array
+from pyspark.sql.types import DoubleType
 
 table_schema = StructType([StructField('sid', IntegerType(), True),
                      StructField('pid', IntegerType(), True)])
@@ -14,7 +16,25 @@ df_raw = spark.read.schema(table_schema).option("header",False).csv("MS2Test.txt
 time1 = t.time()
 #df_raw = df_raw.withColumn("hash", pf.hash(pf.col("pid")))
 #df_raw = df_raw.withColumn("hash2", pf.abs(((pf.lit(-4387413)*df_raw["pid"]) + pf.lit(442551)) % pf.lit(432426133)) % pf.lit(120011))
-df_pivot = df_raw.groupBy(pf.col("pid")).pivot("sid").agg(pf.count(pf.col("pid"))).fillna(0)
+df_group = df_raw.groupBy(pf.col('sid'),pf.col('pid')).agg(pf.count(pf.col("sid")).alias('count'))#.drop("pid")
+df_group2 = df_group.alias('df_group2')
+df_group2 = df_group.select(pf.col('sid').alias('sid2'),pf.col('count').alias('count2'),pf.col('pid').alias('pid2'))
+df_joined = df_group.crossJoin(df_group2)
+df_joined = df_joined.filter((df_joined.sid < df_joined.sid2)&(df_joined.pid==df_joined.pid2))
+df_joined = df_joined.withColumn('Comb',pf.col('count')*pf.col('count2'))
+df_sum = df_joined.groupBy(pf.col('sid'),pf.col('sid2')).agg(pf.sum(pf.col('Comb')).alias('sum'))
+df_sum = df_sum.filter(pf.col('sum')>3000)
+print(t.time()-time1)
+df_sum.show()
+print(df_sum.count())
+#df_joined.show()
+#df_joined = df_group.join(df_group2,(df_group.sid == df_group2.sid2)&(df_group.pid==df_group2.pid2),"inner")
+#df_joined.show(50)
+
+#df_offers = df_joined.withColumn("c", dot_udf(array('count', 'count2')))
+#df_offers.show()
+
+'''df_pivot = df_raw.groupBy(pf.col("pid")).pivot("sid").agg(pf.count(pf.col("pid"))).fillna(0)
 df_pivot = df_pivot.drop("pid")
 products = list()
 print(t.time()-time1)
@@ -30,7 +50,7 @@ print(t.time()-time1)
 dot_sums = df_pivot.select(*products)
 print("dot_sums")
 print(t.time()-time1)
-dot_sums.show()
+dot_sums.show()'''
 
 '''
 print([pf.count(pf.when((pf.isnan(c)),c).alias(c)) for c in dot_sums.columns])
