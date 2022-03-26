@@ -1,4 +1,5 @@
 from ipaddress import ip_address, ip_network
+import ipaddress
 import pandas as pd
 from pyspark.sql import *
 import collections
@@ -9,6 +10,7 @@ def summation(x,y):
 
 df = pd.read_csv("many_addresses.txt")
 print(df)
+print(ip_address(df.iloc[:, 1]))
 dct = collections.defaultdict(list)
 #dct = {}
 print(df.shape[0])

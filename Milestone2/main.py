@@ -1,12 +1,15 @@
+from ipaddress import ip_address
 from sqlite3 import InternalError
 import pyspark.sql.functions as pf
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
-from pyspark.sql import Window
+from pyspark.sql import Window,udf
 from pyspark.rdd import reduce
 import time as t
 from pyspark.sql.functions import udf, array
 from pyspark.sql.types import DoubleType
+from ipaddress import ip_address, ip_network
+import ipaddress
 
 table_schema = StructType([StructField('sid', IntegerType(), True),
                      StructField('pid', IntegerType(), True)])
@@ -14,8 +17,8 @@ table_schema = StructType([StructField('sid', IntegerType(), True),
 spark = SparkSession.builder.getOrCreate()
 df_raw = spark.read.schema(table_schema).option("header",False).csv("MS2Test.txt")
 time1 = t.time()
-#df_raw = df_raw.withColumn("hash", pf.hash(pf.col("pid")))
-#df_raw = df_raw.withColumn("hash2", pf.abs(((pf.lit(-4387413)*df_raw["pid"]) + pf.lit(442551)) % pf.lit(432426133)) % pf.lit(120011))
+#df_raw = df_raw.withColumn("pid", convertUDF(pf.col("pid")))
+#df_raw = df_raw.withColumn("pid", pf.abs(((pf.lit(3173119)*df_raw["pid"]) + pf.lit(442551)) % pf.lit(12077773)) % pf.lit(120011))
 df_group = df_raw.groupBy(pf.col('sid'),pf.col('pid')).agg(pf.count(pf.col("sid")).alias('count'))#.drop("pid")
 df_group2 = df_group.alias('df_group2')
 df_group2 = df_group.select(pf.col('sid').alias('sid2'),pf.col('count').alias('count2'),pf.col('pid').alias('pid2'))
@@ -25,8 +28,15 @@ df_joined = df_joined.withColumn('Comb',pf.col('count')*pf.col('count2'))
 df_sum = df_joined.groupBy(pf.col('sid'),pf.col('sid2')).agg(pf.sum(pf.col('Comb')).alias('sum'))
 df_sum = df_sum.filter(pf.col('sum')>3000)
 print(t.time()-time1)
+df_sum.collect()
+print(t.time()-time1)
+df_sum = df_sum.agg(pf.count(pf.col('sum')))
+print(t.time()-time1)
 df_sum.show()
+print(t.time()-time1)
 print(df_sum.count())
+print(t.time()-time1)
+df_sum.show()
 #df_joined.show()
 #df_joined = df_group.join(df_group2,(df_group.sid == df_group2.sid2)&(df_group.pid==df_group2.pid2),"inner")
 #df_joined.show(50)
